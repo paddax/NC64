@@ -4,8 +4,7 @@
     <name>NC64</name>
     <vendor>paddax</vendor>
     <description><![CDATA[
-        <p><b>NC64</b> is a repository that provides a pure template to make it easier to create a new plugin project.</p>
-        <p>The main goal of this template is to speed up the setup phase of plugin development for both new and experienced developers by preconfiguring the project scaffold and CI, linking to the proper documentation pages, and keeping everything organized.</p>
+        <p><b>NC64</b>This is a simple syntax highlighter for NC64 (gcode / opp) files.</p>
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
@@ -15,5 +14,13 @@
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow factoryClass="com.github.paddax.nc64.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
         <postStartupActivity implementation="com.github.paddax.nc64.startup.MyProjectActivity" />
+
+        <fileType name="NC64 File" implementationClass="com.github.paddax.nc64.NC64FileType"
+                  fieldName="INSTANCE" language="NC64" extensions="nc64;gcode"/>
+        <lang.syntaxHighlighterFactory language="NC64"
+                                       implementationClass="com.github.paddax.nc64.highlighting.NC64SyntaxHighlighterFactory"/>
+        <lang.parserDefinition language="NC64"
+                               implementationClass="com.github.paddax.nc64.NC64ParserDefinition"/>
+        <colorSettingsPage implementation="com.github.paddax.nc64.highlighting.NC64ColorSettingsPage"/>
     </extensions>
 </idea-plugin>
