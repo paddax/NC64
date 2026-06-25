@@ -6,7 +6,7 @@ pluginManagement {
     plugins {
         id("org.jetbrains.kotlin.jvm") version "2.1.20"
         id("org.jetbrains.changelog") version "2.5.0"
-        id("org.jetbrains.grammarkit") version "2022.3.2.2"
+        id("org.jetbrains.grammarkit") version "2023.3.0.3"
     }
 }
 
